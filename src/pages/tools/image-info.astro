@@ -1,0 +1,11 @@
+---
+import AppShell from '@/components/layout/AppShell.vue';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="图片信息 · 图角落"
+  description="批量查看图片基本信息与元数据，一键清除 GPS、拍摄设备等隐私信息"
+>
+  <AppShell client:only="vue" />
+</BaseLayout>

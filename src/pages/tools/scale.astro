@@ -1,0 +1,11 @@
+---
+import AppShell from '@/components/layout/AppShell.vue';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="比例缩放 · 图角落"
+  description="保持原图长宽比增大或缩小图片，支持百分比加减与像素级输入，本地处理输出"
+>
+  <AppShell client:only="vue" />
+</BaseLayout>

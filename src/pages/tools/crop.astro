@@ -1,0 +1,11 @@
+---
+import AppShell from '@/components/layout/AppShell.vue';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="图片裁切 · 图角落"
+  description="按比例或自定义宽高裁切图片，拖动选框所见即所得，输出原始分辨率"
+>
+  <AppShell client:only="vue" />
+</BaseLayout>
