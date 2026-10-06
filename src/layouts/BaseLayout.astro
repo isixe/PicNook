@@ -4,9 +4,23 @@ import '@/styles/global.css';
 interface Props {
   title: string;
   description: string;
+  /** Root-relative or absolute URL of the social preview image. */
+  image?: string;
+  keywords?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  keywords = 'image toolbox, crop, resize, color variants, EXIF, 图片工具, 在线图片处理, 图片裁切, 图片缩放',
+} = Astro.props;
+
+// Build absolute URLs from the `site` configured in astro.config.mjs. When no
+// site is set, fall back to the dev request origin so local builds stay valid.
+const base = Astro.site ?? Astro.url;
+const canonical = new URL(Astro.url.pathname, base).href;
+const imageUrl = image ? new URL(image, base).href : undefined;
 ---
 
 <!doctype html>
@@ -15,7 +29,28 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="isixe" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1e8a63" />
+    <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PicNook" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+
     <title>{title}</title>
   </head>
   <body>
