@@ -1,5 +1,5 @@
 import type { Component } from 'vue';
-import { Crop, Frame, Info, Layers, Palette, Scaling } from '@lucide/vue';
+import { Crop, Fingerprint, Frame, Info, Layers, Palette, Scaling } from '@lucide/vue';
 
 export type ToolCategoryId = 'color' | 'layout' | 'info';
 
@@ -71,6 +71,14 @@ export const tools: ReadonlyArray<ToolDef> = [
     icon: Frame,
     titleKey: 'tools.canvasMargin.title',
     descKey: 'tools.canvasMargin.desc',
+  },
+  {
+    slug: 'blind-watermark',
+    path: '/tools/blind-watermark',
+    category: 'info',
+    icon: Fingerprint,
+    titleKey: 'tools.blindWatermark.title',
+    descKey: 'tools.blindWatermark.desc',
   },
 ];
 

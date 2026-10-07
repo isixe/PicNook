@@ -45,6 +45,11 @@ export const router = createRouter({
       name: 'canvas-margin',
       component: () => import('@/components/tools/canvas-margin/CanvasMarginTool.vue'),
     },
+    {
+      path: '/tools/blind-watermark',
+      name: 'blind-watermark',
+      component: () => import('@/components/tools/blind-watermark/BlindWatermarkTool.vue'),
+    },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior: () => ({ top: 0 }),
