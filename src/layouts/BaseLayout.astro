@@ -52,6 +52,11 @@ const imageUrl = image ? new URL(image, base).href : undefined;
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
     <title>{title}</title>
+    <script
+      defer
+      src="https://analytics.itea.dev/tracker.min.js"
+      data-website-id="picnook"
+    ></script>
   </head>
   <body>
     <slot />
