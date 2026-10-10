@@ -1,0 +1,11 @@
+---
+import AppShell from '@/components/layout/AppShell.vue';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="平铺水印 · 图角落"
+  description="为图片添加平铺的文字或图片水印，可调平铺密度、透明度与旋转角度，适合防盗图与版权标注。"
+>
+  <AppShell client:only="vue" />
+</BaseLayout>

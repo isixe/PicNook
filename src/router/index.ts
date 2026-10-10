@@ -46,9 +46,9 @@ export const router = createRouter({
       component: () => import('@/components/tools/canvas-margin/CanvasMarginTool.vue'),
     },
     {
-      path: '/tools/blind-watermark',
-      name: 'blind-watermark',
-      component: () => import('@/components/tools/blind-watermark/BlindWatermarkTool.vue'),
+      path: '/tools/tiled-watermark',
+      name: 'tiled-watermark',
+      component: () => import('@/components/tools/tiled-watermark/TiledWatermarkTool.vue'),
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
